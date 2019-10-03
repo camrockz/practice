@@ -5,3 +5,13 @@ Write a C program to print the following characters in a reverse way.
 Test Characters: 'X', 'M', 'L'
 Expected Output:
 The reverse of XML is LMX
+
+1.c
+Write a C program to convert specified days into years, weeks and days.
+Note: Ignore leap year.
+Test Data :
+Number of days : 1329
+Expected Output :
+Years: 3
+Weeks: 33
+Days: 3
