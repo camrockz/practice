@@ -26,12 +26,32 @@
    
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 
 int get_int()
 {
-    char string [10];
-    fgets(string , sizeof(string) , stdin);
-    int ret_int = atoi(string);
+    char buffer[10];
+    char *endp;
+    errno = 0;
+    fgets(buffer , sizeof(buffer) , stdin);
+    int ret_int = strtol(buffer , &endp , 10);
+    
+    if (*endp != '\n')
+    {
+        fprintf(stderr , "Invalid input\n");
+        exit(EXIT_FAILURE);
+    }
+    
+    if (errno != 0 && ret_int == 0)
+    {
+        perror("strtol");
+        exit(EXIT_FAILURE);
+    }
+    if (endp == (char*)&buffer)
+    {
+        fprintf(stderr , "There were no numbers found");
+        exit(EXIT_FAILURE);
+    }
     return ret_int;
 }
 
@@ -42,10 +62,10 @@ int main()
     int years;
     int weeks;
     int days;
+    int numofDays;
     
     printf("Type a number of days: ");
-    
-    int numofDays = get_int();
+    numofDays = get_int();
     years = numofDays/daysinYear;
     weeks = (numofDays-(years*daysinYear))/daysinWeek;
     days = numofDays-((years*daysinYear)+(weeks*daysinWeek));
