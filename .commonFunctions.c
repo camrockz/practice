@@ -68,7 +68,7 @@ float get_float()
     
     if (errno != 0 && ret_float == 0)
     {
-        perror("strtol");
+        perror("strtof");
         exit(EXIT_FAILURE);
     }
     if (endp == (char*)&buffer)
