@@ -25,3 +25,15 @@ Input x2: 35
 Input y2: 10
 Expected Output:
 Distance between the said points: 11.1803
+
+3.c
+Write a C program that read 5 numbers and counts the number of positive numbers and print the average of all positive values.
+Test Data :
+Input the first number: 5
+Input the second number: 8
+Input the third number: 10
+Input the fourth number: -5
+Input the fifth number: 25
+Expected Output:
+Number of positive numbers: 4
+Average value of the said positive numbers: 12.00
