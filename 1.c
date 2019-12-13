@@ -1,33 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <errno.h>
-
-int get_int()
-{
-    char buffer[10];
-    char *endp;
-    errno = 0;
-    fgets(buffer , sizeof(buffer) , stdin);
-    int ret_int = strtol(buffer , &endp , 10);
-    
-    if (*endp != '\n')
-    {
-        fprintf(stderr , "Invalid input\n");
-        exit(EXIT_FAILURE);
-    }
-    
-    if (errno != 0 && ret_int == 0)
-    {
-        perror("strtol");
-        exit(EXIT_FAILURE);
-    }
-    if (endp == (char*)&buffer)
-    {
-        fprintf(stderr , "There were no numbers found");
-        exit(EXIT_FAILURE);
-    }
-    return ret_int;
-}
+#include "libpractice.h"
 
 int main()
 {
