@@ -28,6 +28,10 @@
    OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+
 //GET AN INT FROM STDIN
 int get_int()
 {
@@ -36,13 +40,20 @@ int get_int()
     errno = 0;
     fgets(buffer , sizeof(buffer) , stdin);
     int ret_int = strtol(buffer , &endp , 10);
-    
     if (*endp != '\n')
     {
-        fprintf(stderr , "Invalid input\n");
-        exit(EXIT_FAILURE);
+        char c;
+        int i = 0;
+        while ((c = getchar()) != '\n' && c != EOF)
+        {
+            i++;
+            if (i > 10)
+            {
+                fprintf(stderr , "Buffer overflow, exiting");
+                exit(EXIT_FAILURE);
+            }
+        }
     }
-    
     if (errno != 0 && ret_int == 0)
     {
         perror("strtol");
@@ -50,7 +61,7 @@ int get_int()
     }
     if (endp == (char*)&buffer)
     {
-        fprintf(stderr , "There were no numbers found");
+        fprintf(stderr , "There were no numbers found, exiting");
         exit(EXIT_FAILURE);
     }
     return ret_int;
@@ -66,10 +77,18 @@ float get_float()
     float ret_float = strtof(buffer , &endp);
     if (*endp != '\n')
     {
-        fprintf(stderr , "Invalid input\n");
-        exit(EXIT_FAILURE);
+        char c;
+        int i = 0;
+        while ((c = getchar()) != '\n' && c != EOF)
+        {
+            i++;
+            if (i > 10)
+            {
+                fprintf(stderr , "Buffer overflow, exiting");
+                exit(EXIT_FAILURE);
+            }
+        }
     }
-    
     if (errno != 0 && ret_float == 0)
     {
         perror("strtof");
@@ -77,7 +96,7 @@ float get_float()
     }
     if (endp == (char*)&buffer)
     {
-        fprintf(stderr , "There were no numbers found");
+        fprintf(stderr , "There were no numbers found, exiting");
         exit(EXIT_FAILURE);
     }
     return ret_float;
