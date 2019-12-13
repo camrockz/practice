@@ -39,3 +39,10 @@ Input the fifth number: 25
 Expected Output:
 Number of positive numbers: 4
 Average value of the said positive numbers: 12.00
+
+4.c
+Write a C program to print a number from input as Roman numerals.
+Test Data:
+Type in a number: 1988
+Expected output:
+MCMLXXXVIII
