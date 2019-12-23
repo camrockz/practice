@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibpractice.a  CMakeFiles/libpractice.dir/libpractice.c.o
+/usr/bin/ranlib liblibpractice.a

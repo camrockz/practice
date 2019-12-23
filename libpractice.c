@@ -2,6 +2,39 @@
 #include <stdlib.h>
 #include <errno.h>
 
+//GET A STRING FROM STDIN
+char get_string(int length , char *buffer)
+{
+    if (length < 1 || length > __INT_MAX__)
+    {
+        fprintf(stderr , "String length out of bounds, exiting");
+        exit(EXIT_FAILURE);
+    }
+    fgets(buffer , length , stdin);
+    int i = 0;
+    char x;
+    while (i < length && x != '\n')
+    {
+        x = buffer[i];
+        i++;
+    }
+    if (x != '\n')
+    {
+        char c;
+        int i = 0;
+        while ((c = getchar()) != '\n' && c != EOF)
+        {
+            i++;
+            if (i > 10)
+            {
+                fprintf(stderr , "Buffer overflow, exiting");
+                exit(EXIT_FAILURE);
+            }
+        }
+    }
+    return 0;
+}
+    
 //GET AN INT FROM STDIN
 int get_int()
 {
@@ -37,7 +70,7 @@ int get_int()
     return ret_int;
 }
 
-//GET AN FLOAT FROM STDIN
+//GET A FLOAT FROM STDIN
 float get_float()
 {
     char buffer[10];

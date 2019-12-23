@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/practice.dir/practice.c.o  -o practice -lm liblibpractice.a 
