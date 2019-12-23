@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/cam/projects/practice/practice.c" "/home/cam/projects/practice/build/CMakeFiles/practice.dir/practice.c.o"
+  "/home/cam/projects/practice/5.c" "/home/cam/projects/practice/build/CMakeFiles/practicebin.dir/5.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -14,6 +14,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/cam/projects/practice/build/CMakeFiles/practice.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

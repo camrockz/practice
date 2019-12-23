@@ -63,19 +63,51 @@ CMAKE_BINARY_DIR = /home/cam/projects/practice/build
 # Directory level rules for the build root directory
 
 # The main recursive "clean" target.
+clean: CMakeFiles/practicebin.dir/clean
 clean: CMakeFiles/practice.dir/clean
-clean: CMakeFiles/libpractice.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/practicebin.dir
+
+# All Build rule for target.
+CMakeFiles/practicebin.dir/all: CMakeFiles/practice.dir/all
+	$(MAKE) -f CMakeFiles/practicebin.dir/build.make CMakeFiles/practicebin.dir/depend
+	$(MAKE) -f CMakeFiles/practicebin.dir/build.make CMakeFiles/practicebin.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cam/projects/practice/build/CMakeFiles --progress-num=3,4 "Built target practicebin"
+.PHONY : CMakeFiles/practicebin.dir/all
+
+# Include target in all.
+all: CMakeFiles/practicebin.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/practicebin.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cam/projects/practice/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/practicebin.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cam/projects/practice/build/CMakeFiles 0
+.PHONY : CMakeFiles/practicebin.dir/rule
+
+# Convenience name for target.
+practicebin: CMakeFiles/practicebin.dir/rule
+
+.PHONY : practicebin
+
+# clean rule for target.
+CMakeFiles/practicebin.dir/clean:
+	$(MAKE) -f CMakeFiles/practicebin.dir/build.make CMakeFiles/practicebin.dir/clean
+.PHONY : CMakeFiles/practicebin.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/practice.dir
 
 # All Build rule for target.
-CMakeFiles/practice.dir/all: CMakeFiles/libpractice.dir/all
+CMakeFiles/practice.dir/all:
 	$(MAKE) -f CMakeFiles/practice.dir/build.make CMakeFiles/practice.dir/depend
 	$(MAKE) -f CMakeFiles/practice.dir/build.make CMakeFiles/practice.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cam/projects/practice/build/CMakeFiles --progress-num=3,4 "Built target practice"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cam/projects/practice/build/CMakeFiles --progress-num=1,2 "Built target practice"
 .PHONY : CMakeFiles/practice.dir/all
 
 # Include target in all.
@@ -85,7 +117,7 @@ all: CMakeFiles/practice.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/practice.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cam/projects/practice/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cam/projects/practice/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/practice.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cam/projects/practice/build/CMakeFiles 0
 .PHONY : CMakeFiles/practice.dir/rule
@@ -99,38 +131,6 @@ practice: CMakeFiles/practice.dir/rule
 CMakeFiles/practice.dir/clean:
 	$(MAKE) -f CMakeFiles/practice.dir/build.make CMakeFiles/practice.dir/clean
 .PHONY : CMakeFiles/practice.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/libpractice.dir
-
-# All Build rule for target.
-CMakeFiles/libpractice.dir/all:
-	$(MAKE) -f CMakeFiles/libpractice.dir/build.make CMakeFiles/libpractice.dir/depend
-	$(MAKE) -f CMakeFiles/libpractice.dir/build.make CMakeFiles/libpractice.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cam/projects/practice/build/CMakeFiles --progress-num=1,2 "Built target libpractice"
-.PHONY : CMakeFiles/libpractice.dir/all
-
-# Include target in all.
-all: CMakeFiles/libpractice.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/libpractice.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cam/projects/practice/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/libpractice.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cam/projects/practice/build/CMakeFiles 0
-.PHONY : CMakeFiles/libpractice.dir/rule
-
-# Convenience name for target.
-libpractice: CMakeFiles/libpractice.dir/rule
-
-.PHONY : libpractice
-
-# clean rule for target.
-CMakeFiles/libpractice.dir/clean:
-	$(MAKE) -f CMakeFiles/libpractice.dir/build.make CMakeFiles/libpractice.dir/clean
-.PHONY : CMakeFiles/libpractice.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

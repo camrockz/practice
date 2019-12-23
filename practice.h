@@ -1,5 +1,5 @@
-#ifndef LIBPRACTICE_H
-#define LIBPRACTICE_H
+#ifndef PRACTICE_H
+#define PRACTICE_H
 
 //GET A STRING FROM STDIN
 char get_string(int , char*);

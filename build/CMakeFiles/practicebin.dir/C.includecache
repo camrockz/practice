@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/cam/projects/practice/practice.c
+/home/cam/projects/practice/5.c
 stdio.h
 -
 stdlib.h
 -
-errno.h
--
+practice.h
+/home/cam/projects/practice/practice.h
+
+/home/cam/projects/practice/practice.h
 

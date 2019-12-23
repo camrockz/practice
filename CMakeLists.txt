@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.0)
 
 project(practice LANGUAGES C)
 
-add_library(libpractice STATIC libpractice.c)
+add_library(practice STATIC practice.c)
 
-add_executable(practice practice.c)
+add_executable(practicebin 5.c)
 
-install(TARGETS practice RUNTIME DESTINATION bin)
+install(TARGETS practicebin RUNTIME DESTINATION practicebin)
 
-target_link_libraries(practice m libpractice)
+target_link_libraries(practicebin m practice)

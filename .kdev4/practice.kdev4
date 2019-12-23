@@ -29,12 +29,12 @@ Arguments=
 Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x00)
 Dependency Action=Build
 EnvironmentGroup=
-Executable=file:///home/cam/projects/practice
+Executable=file:///home/cam/projects/practice/build/practicebin
 External Terminal=konsole --noclose --workdir %workdir -e %exe
 Project Target=practice,practice
 Use External Terminal=true
 Working Directory=
-isExecutable=false
+isExecutable=true
 
 [Project]
 VersionControlSupport=

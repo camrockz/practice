@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/cam/projects/practice/practice.c" "/home/cam/projects/practice/build/CMakeFiles/practice.dir/practice.c.o"
+  "/home/cam/projects/practice/5.c" "/home/cam/projects/practice/build/CMakeFiles/bin.dir/5.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

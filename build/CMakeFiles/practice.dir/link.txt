@@ -1,1 +1,2 @@
-/usr/bin/cc   -rdynamic CMakeFiles/practice.dir/practice.c.o  -o practice -lm liblibpractice.a 
+/usr/bin/ar qc libpractice.a  CMakeFiles/practice.dir/practice.c.o
+/usr/bin/ranlib libpractice.a

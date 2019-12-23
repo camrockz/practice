@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/practice" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/practice")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/practicebin/practicebin" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/practicebin/practicebin")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/practice"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/practicebin/practicebin"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/cam/projects/practice/build/practice")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/practice" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/practice")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/practicebin" TYPE EXECUTABLE FILES "/home/cam/projects/practice/build/practicebin")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/practicebin/practicebin" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/practicebin/practicebin")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/practice")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/practicebin/practicebin")
     endif()
   endif()
 endif()

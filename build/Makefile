@@ -80,17 +80,6 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -101,6 +90,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target install
 install: preinstall
@@ -157,6 +157,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named practicebin
+
+# Build rule for target.
+practicebin: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 practicebin
+.PHONY : practicebin
+
+# fast build rule for target.
+practicebin/fast:
+	$(MAKE) -f CMakeFiles/practicebin.dir/build.make CMakeFiles/practicebin.dir/build
+.PHONY : practicebin/fast
+
+#=============================================================================
 # Target rules for targets named practice
 
 # Build rule for target.
@@ -169,45 +182,32 @@ practice/fast:
 	$(MAKE) -f CMakeFiles/practice.dir/build.make CMakeFiles/practice.dir/build
 .PHONY : practice/fast
 
-#=============================================================================
-# Target rules for targets named libpractice
+5.o: 5.c.o
 
-# Build rule for target.
-libpractice: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libpractice
-.PHONY : libpractice
-
-# fast build rule for target.
-libpractice/fast:
-	$(MAKE) -f CMakeFiles/libpractice.dir/build.make CMakeFiles/libpractice.dir/build
-.PHONY : libpractice/fast
-
-libpractice.o: libpractice.c.o
-
-.PHONY : libpractice.o
+.PHONY : 5.o
 
 # target to build an object file
-libpractice.c.o:
-	$(MAKE) -f CMakeFiles/libpractice.dir/build.make CMakeFiles/libpractice.dir/libpractice.c.o
-.PHONY : libpractice.c.o
+5.c.o:
+	$(MAKE) -f CMakeFiles/practicebin.dir/build.make CMakeFiles/practicebin.dir/5.c.o
+.PHONY : 5.c.o
 
-libpractice.i: libpractice.c.i
+5.i: 5.c.i
 
-.PHONY : libpractice.i
+.PHONY : 5.i
 
 # target to preprocess a source file
-libpractice.c.i:
-	$(MAKE) -f CMakeFiles/libpractice.dir/build.make CMakeFiles/libpractice.dir/libpractice.c.i
-.PHONY : libpractice.c.i
+5.c.i:
+	$(MAKE) -f CMakeFiles/practicebin.dir/build.make CMakeFiles/practicebin.dir/5.c.i
+.PHONY : 5.c.i
 
-libpractice.s: libpractice.c.s
+5.s: 5.c.s
 
-.PHONY : libpractice.s
+.PHONY : 5.s
 
 # target to generate assembly for a file
-libpractice.c.s:
-	$(MAKE) -f CMakeFiles/libpractice.dir/build.make CMakeFiles/libpractice.dir/libpractice.c.s
-.PHONY : libpractice.c.s
+5.c.s:
+	$(MAKE) -f CMakeFiles/practicebin.dir/build.make CMakeFiles/practicebin.dir/5.c.s
+.PHONY : 5.c.s
 
 practice.o: practice.c.o
 
@@ -244,15 +244,15 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... practicebin"
+	@echo "... rebuild_cache"
 	@echo "... practice"
 	@echo "... edit_cache"
-	@echo "... libpractice"
-	@echo "... rebuild_cache"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... libpractice.o"
-	@echo "... libpractice.i"
-	@echo "... libpractice.s"
+	@echo "... 5.o"
+	@echo "... 5.i"
+	@echo "... 5.s"
 	@echo "... practice.o"
 	@echo "... practice.i"
 	@echo "... practice.s"
