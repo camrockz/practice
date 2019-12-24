@@ -12,7 +12,7 @@ CMake Binary=/usr/bin/cmake
 CMake Executable=/usr/bin/cmake
 Environment Profile=
 Extra Arguments=
-Install Directory=
+Install Directory=/usr/local
 Runtime=Host System
 
 [Launch]
@@ -31,10 +31,10 @@ Dependency Action=Build
 EnvironmentGroup=
 Executable=file:///home/cam/projects/practice/build/practicebin
 External Terminal=konsole --noclose --workdir %workdir -e %exe
-Project Target=practice,practice
+Project Target=practice,practicebin
 Use External Terminal=true
 Working Directory=
-isExecutable=true
+isExecutable=false
 
 [Project]
 VersionControlSupport=
