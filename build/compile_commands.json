@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/cam/projects/practice/build",
+  "command": "/usr/bin/cc   -g   -o CMakeFiles/practicebin.dir/5.c.o   -c /home/cam/projects/practice/5.c",
+  "file": "/home/cam/projects/practice/5.c"
+},
+{
+  "directory": "/home/cam/projects/practice/build",
+  "command": "/usr/bin/cc   -g   -o CMakeFiles/practice.dir/practice.c.o   -c /home/cam/projects/practice/practice.c",
+  "file": "/home/cam/projects/practice/practice.c"
+}
+]

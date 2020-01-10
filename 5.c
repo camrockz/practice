@@ -10,5 +10,10 @@ int main()
     char test[length];
     get_string(length, test);
     printf("You typed: %s" , test);
-   return 0;
+    printf("\n");
+    printf("Type in a string: ");
+    get_string(length, test);
+    printf("You typed: %s" , test);
+    printf("\n");
+    return 0;
 }

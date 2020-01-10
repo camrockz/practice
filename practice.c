@@ -3,7 +3,7 @@
 #include <errno.h>
 
 //GET A STRING FROM STDIN
-char get_string(int length , char *buffer)
+int get_string(int length , char *buffer)
 {
     if (length < 1 || length > __INT_MAX__)
     {
@@ -12,13 +12,11 @@ char get_string(int length , char *buffer)
     }
     fgets(buffer , length , stdin);
     int i = 0;
-    char x;
-    while (i < length && x != '\n')
+    while (i < length && buffer[i] != '\n')
     {
-        x = buffer[i];
         i++;
     }
-    if (x != '\n')
+    if (buffer[i] != '\n')
     {
         char c;
         int i = 0;
