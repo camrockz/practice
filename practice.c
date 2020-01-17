@@ -3,7 +3,7 @@
 #include <errno.h>
 
 //GET A STRING FROM STDIN
-int get_string(int length , char *buffer)
+void get_string(int length , char *buffer)
 {
     if (length < 1 || length > __INT_MAX__)
     {
@@ -30,7 +30,6 @@ int get_string(int length , char *buffer)
             }
         }
     }
-    return 0;
 }
     
 //GET AN INT FROM STDIN

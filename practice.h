@@ -2,7 +2,7 @@
 #define PRACTICE_H
 
 //GET A STRING FROM STDIN
-char get_string(int , char*);
+void get_string(int , char*);
 
 //GET AN INT FROM STDIN
 int get_int();
