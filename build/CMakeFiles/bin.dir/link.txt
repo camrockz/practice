@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/bin.dir/5.c.o  -o bin 

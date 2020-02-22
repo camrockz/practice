@@ -15,9 +15,6 @@ int main()
     char temp;
     while (keepWhile != 0)
     {
-        //printf("%s" , aString);
-        //i = 0;
-        
         for (i = 0; i < sizeof(aString)/sizeof(aString[0]); i++)
         {
             if (aString[i+1] == '\n') break;

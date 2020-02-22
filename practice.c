@@ -11,6 +11,11 @@ void get_string(int length , char *buffer)
         exit(EXIT_FAILURE);
     }
     fgets(buffer , length , stdin);
+	if (buffer[0] == '\n')
+	{
+		fprintf(stderr , "No string was found, exiting");
+		exit(EXIT_FAILURE);
+	}
     int i = 0;
     while (i < length && buffer[i] != '\n')
     {
