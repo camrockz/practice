@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.12)
 
 project(practice LANGUAGES C)
 
 add_library(practice STATIC practice.c)
 
-add_executable(practicebin 5.c)
+add_executable(practicebin 6.c)
 
 install(TARGETS practicebin RUNTIME DESTINATION practicebin)
 
