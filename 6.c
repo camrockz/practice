@@ -7,7 +7,7 @@ int sumOfDigits(int);
 int main()
 {
     printf("Type in a number: ");
-	int digits = get_int();
+	int digits = getInt();
 	int sum = sumOfDigits(digits);
 	printf("%d\n" , sum);
    return 0;

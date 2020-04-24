@@ -13,13 +13,13 @@ int main()
 
     
     printf("Input x1: ");
-    x1 = get_float();
+    x1 = getFloat();
     printf("Input y1: ");
-    y1 = get_float();
+    y1 = getFloat();
     printf("Input x2: ");
-    x2 = get_float();
+    x2 = getFloat();
     printf("Input y2: ");
-    y2 = get_float();
+    y2 = getFloat();
     distance = sqrt((double)((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)));
     printf("Distance between said points: %.2f" , distance);
    

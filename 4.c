@@ -77,7 +77,7 @@ int main()
 {
     int num;
     printf("Type in a number: ");
-    num = get_int();
+    num = getInt();
     printRoman(num);
    return 0;
 }

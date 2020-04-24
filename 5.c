@@ -9,7 +9,7 @@ int main()
     int length = 50;
     int keepWhile = 1;
     char aString[length];
-    get_string(length, aString);
+    getString(length, aString);
     int moveCount = 0;
     int i = 0;
     char temp;

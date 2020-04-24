@@ -5,14 +5,14 @@
 int main()
 {
     int num[4];
-    int posNums;
+    int posNums = 0;
     int total = 0;
     int average;
     
     for (int i = 0; i < 5; i++)
     {
         printf("Type in number %d of 5: " , i + 1);
-        num[i] = get_int();
+        num[i] = getInt();
     }
     for (int j = 0; j < 5; j++)
     {

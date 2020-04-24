@@ -1,9 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <string.h>
+
+//MAKE STRING INTO ARRAY OF STRINGS
+char **mkstrArray(char *buffer)
+{
+	static char *pbuff[100];
+	char **ppbuff = pbuff;
+	char *tmp = NULL;
+	char delim[] = {" '\n'"};
+	int i;
+	char *stringp = malloc(sizeof(char) * (strlen(buffer)));
+	strncpy(stringp , buffer , (strlen(buffer)));
+	for (i = 0; ; i++ , stringp = NULL)
+	{
+		pbuff[i] = strtok_r(stringp , delim , &tmp);
+		if (pbuff[i] == NULL) break;
+	}
+	return ppbuff;
+}
 
 //GET A STRING FROM STDIN
-void get_string(int length , char *buffer)
+void getString(int length , char *buffer)
 {
     if (length < 1 || length > __INT_MAX__)
     {
@@ -38,7 +57,7 @@ void get_string(int length , char *buffer)
 }
     
 //GET AN INT FROM STDIN
-int get_int()
+int getInt()
 {
     char buffer[10];
     char *endp;
@@ -73,7 +92,7 @@ int get_int()
 }
 
 //GET A FLOAT FROM STDIN
-float get_float()
+float getFloat()
 {
     char buffer[10];
     char *endp;

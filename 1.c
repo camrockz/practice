@@ -12,7 +12,7 @@ int main()
     int numofDays;
     
     printf("Type a number of days: ");
-    numofDays = get_int();
+    numofDays = getInt();
     years = numofDays/daysinYear;
     weeks = (numofDays-(years*daysinYear))/daysinWeek;
     days = numofDays-((years*daysinYear)+(weeks*daysinWeek));
