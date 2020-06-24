@@ -6,19 +6,19 @@
 //MAKE STRING INTO ARRAY OF STRINGS
 char **mkstrArray(char *buffer)
 {
-	static char *pbuff[100];
-	char **ppbuff = pbuff;
-	char *tmp = NULL;
-	char delim[] = {" '\n'"};
-	int i;
-	char *stringp = malloc(sizeof(char) * (strlen(buffer)));
-	strncpy(stringp , buffer , (strlen(buffer)));
-	for (i = 0; ; i++ , stringp = NULL)
-	{
-		pbuff[i] = strtok_r(stringp , delim , &tmp);
-		if (pbuff[i] == NULL) break;
-	}
-	return ppbuff;
+    static char *pbuff[100];
+    char **ppbuff = pbuff;
+    char *tmp = NULL;
+    char delim[] = {" '\n'"};
+    int i;
+    char *stringp = malloc(sizeof(char) * (strlen(buffer)));
+    strncpy(stringp , buffer , (strlen(buffer)));
+    for (i = 0; ; i++ , stringp = NULL)
+    {
+        pbuff[i] = strtok_r(stringp , delim , &tmp);
+        if (pbuff[i] == NULL) break;
+    }
+    return ppbuff;
 }
 
 //GET A STRING FROM STDIN
@@ -30,11 +30,11 @@ void getString(int length , char *buffer)
         exit(EXIT_FAILURE);
     }
     fgets(buffer , length , stdin);
-	if (buffer[0] == '\n')
-	{
-		fprintf(stderr , "No string was found, exiting");
-		exit(EXIT_FAILURE);
-	}
+    if (buffer[0] == '\n')
+    {
+        fprintf(stderr , "No string was found, exiting");
+        exit(EXIT_FAILURE);
+    }
     int i = 0;
     while (i < length && buffer[i] != '\n')
     {
